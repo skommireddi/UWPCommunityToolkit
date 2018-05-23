@@ -32,6 +32,15 @@
         "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/controls/AdaptiveGridView.md"
       },
       {
+        "Name": "UniformGrid",
+        "Type": "UniformGridPage",
+        "About": "Presents items in a evenly-spaced set of rows or columns to fill the total available display space. It reacts to changes in the layout as well as the content so it can adapt to different form factors automatically.",
+        "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/UniformGrid",
+        "XamlCodeFile": "UniformGridXaml.bind",
+        "Icon": "/SamplePages/UniformGrid/UniformGrid.png",
+        "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/controls/UniformGrid.md"
+      },
+      {
         "Name": "HamburgerMenu",
         "Type": "HamburgerMenuPage",
         "About": "The HamburgerMenu is deprecated and will be removed in a future major release. Please use the NavigationView available in the Fall Creators Update.",
@@ -121,11 +130,13 @@
       {
         "Name": "PullToRefreshListView",
         "Type": "PullToRefreshListViewPage",
-        "About": "PullToRefreshListView is derived from the built in ListView in the Universal Windows Platform. It enables the popular Pull To Refresh pattern.",
+        "About": "The PullToRefreshListView will be removed in a future major release. Please use the RefreshContainer control available in the 1803 version of Windows.",
         "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/PullToRefreshListView",
         "CodeFile": "PullToRefreshListViewCode.bind",
         "XamlCodeFile": "PullToRefreshListViewXaml.bind",
         "Icon": "/SamplePages/PullToRefreshListView/PullToRefreshListView.png",
+        "BadgeUpdateVersionRequired": "DEPRECATED",
+        "DeprecatedWarning": "The PullToRefreshListView will be removed in a future major release. Please use the RefreshContainer control available in the 1803 version of Windows.",
         "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/controls/PullToRefreshListview.md"
       },
       {
@@ -282,6 +293,15 @@
         "XamlCodeFile": "LayoutTransformControlXaml.bind",
         "Icon": "/SamplePages/LayoutTransformControl/LayoutTransformControl.png",
         "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/controls/LayoutTransformControl.md"
+      },
+      {
+        "Name": "InfiniteCanvas",
+        "Type": "InfiniteCanvasPage",
+        "About": "InfiniteCanvas is a canvas that supports Infinite Scrolling, Ink, Text, Format Text, Zoom in/out, Redo, Undo, Export canvas data, Import canvas data.",
+        "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/InfiniteCanvas",
+        "XamlCodeFile": "InfiniteCanvas.bind",
+        "Icon": "/SamplePages/InfiniteCanvas/InfiniteCanvas.png",
+        "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/controls/InfiniteCanvas.md"
       }
     ]
   },
@@ -489,7 +509,7 @@
         "About": "The Microsoft Graph service allows you to connect to Microsoft Graph Office 365 API.",
         "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Services/Services/MicrosoftGraph",
         "CodeFile": "MicrosoftGraphCode.bind",
-        "Icon": "/SamplePages/Microsoft Graph Service/OfficeLogo.png",
+        "Icon": "/SamplePages/Microsoft Graph Service/mslogo.png",
         "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/services/MicrosoftGraph.md"
       },
       {
@@ -859,6 +879,76 @@
         "About": "List of frameworks to help you track activity in your apps.",
         "CodeFile": "AnalyticsCode.bind",
         "Icon": "/SamplePages/Analytics/Analytics.png"
+      }
+    ]
+  },
+  {
+    "Name": "Graph",
+    "Icon": "Icons/Foundation.png",
+    "Samples": [
+      {
+        "Name": "AadLogin",
+        "Type": "AadLoginPage",
+        "About": "The AadLogin Control leverages existing .NET login libraries to support basic AAD sign-in processes for Microsoft Graph.",
+        "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls.Graph/AadLogin",
+        "CodeFile": "AadLoginCode.bind",
+        "XamlCodeFile": "AadLoginXaml.bind",
+        "Icon": "/SamplePages/AadLogin/AadLogin.png",
+        "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/graph/AadLogin.md"
+      },
+      {
+        "Name": "ProfileCard",
+        "Type": "ProfileCardPage",
+        "About": "The ProfileCard Control is a simple way to display a user in multiple different formats and mixes of name/image/e-mail.",
+        "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls.Graph/ProfileCard",
+        "XamlCodeFile": "ProfileCardXaml.bind",
+        "Icon": "/SamplePages/ProfileCard/ProfileCard.png",
+        "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/graph/ProfileCard.md"
+      },
+      {
+        "Name": "PeoplePicker",
+        "Type": "PeoplePickerPage",
+        "About": "The PeoplePicker Control is a simple control that allows for selection of one or more users from an organizational AD.",
+        "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls.Graph/PeoplePicker",
+        "XamlCodeFile": "PeoplePickerXaml.bind",
+        "Icon": "/SamplePages/PeoplePicker/PeoplePicker.png",
+        "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/graph/PeoplePicker.md"
+      },
+      {
+        "Name": "SharePointFileList",
+        "Type": "SharePointFileListPage",
+        "About": "The SharePointFileList Control displays a simple list of SharePoint Files.",
+        "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls.Graph/SharePointFileList",
+        "CodeFile": "SharePointFileListCode.bind",
+        "XamlCodeFile": "SharePointFileListXaml.bind",
+        "Icon": "/SamplePages/SharePointFileList/SharePointFileList.png",
+        "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/graph/SharePointFileList.md"
+      }
+     ]
+    },
+  {
+    "Name": "Gaze",
+    "Icon": "Icons/DeveloperTools.png",
+    "Samples": [     
+      {
+        "Name": "GazeInteraction",
+        "Type": "GazeInteractionPage",
+        "About": "Demonstrate the properties and events of the Gaze Interaction library",
+        "XamlCodeFile": "GazeInteractionXaml.bind",
+        "CodeFile": "GazeInteractionCode.bind",
+        "Icon": "/SamplePages/GazeInteraction/GazeInteraction.png",
+        "DocumentationUrl": "https://raw.githubusercontent.com/Microsoft/UWPCommunityToolkit/master/docs/gaze/GazeInteractionLibrary.md",
+        "ApiCheck": "Windows.Devices.Input.Preview.GazeInputSourcePreview"
+      },
+      {
+        "Name": "GazeTracing",
+        "Type": "GazeTracingPage",
+        "About": "Shows how to use the Windows 10 API for eye trackers",
+        "CodeUrl": "https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Input.Gaze/",
+        "XamlCodeFile": "GazeTracingXaml.bind",
+        "CodeFile": "GazeTracingCode.bind",
+        "Icon": "/SamplePages/GazeTracing/GazeTracing.png",
+        "ApiCheck": "Windows.Devices.Input.Preview.GazeInputSourcePreview"
       }
     ]
   }

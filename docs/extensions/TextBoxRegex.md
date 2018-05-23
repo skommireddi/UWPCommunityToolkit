@@ -2,7 +2,7 @@
 title: TextBoxRegex XAML Property
 author: nmetulev
 description: The TextBoxRegex Property allows text validation using a regular expression or using built in validation types.
-keywords: windows 10, uwp, uwp community toolkit, uwp toolkit, TextBoxRegex, XAML
+keywords: windows 10, uwp, windows community toolkit, uwp community toolkit, uwp toolkit, TextBoxRegex, XAML
 ---
 
 # TextBoxRegex XAML Property
@@ -11,9 +11,10 @@ The [TextBoxRegex Property](https://docs.microsoft.com/dotnet/api/microsoft.tool
 
 The developer adds a regular expression to validate the TextBox Text against the regular expression throw Regex property or from selecting ValidationType property on the TextBox.
 
-The validation has 2 modes (`ValidationMode`):
+The validation has 3 modes (`ValidationMode`):
 1) Normal (Default) : This type will set TextBox IsValid attached property to false or true whether the TextBox text is a valid or not against the Regex property.
-2) Forced : This type sets the IsValid property and remove the TextBox text if not valid when the TextBox lose focus.   
+2) Forced : This type sets the IsValid property and remove the TextBox text if not valid when the TextBox lose focus. 
+3) Dynamic : This type extends 1) Normal and if is the newest input of the Textbox  is invalid, the character which is invalied will be deleted. Note that ValidationType Email and Phone Number not support the ValidationMode Dynamic. If you set the ValidationMode to Dynamic, the ValidationMode Normal is selected automatically.
 
 ## Syntax
 
@@ -42,7 +43,7 @@ Text box with ValidationType=Email, validation occurs on TextChanged
 | -- | -- | -- |
 | IsValid | bool | Represents the custom mask that the user can create to add his own variable characters based on regex expression |
 | Regex | string | Set the regular expression that will be used to validate the TextBox |
-| ValidationMode | [ValidationMode](https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.ui.extensions.textboxregex.validationmode) | Set validation mode. Normal or Forced |
+| ValidationMode | [ValidationMode](https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.ui.extensions.textboxregex.validationmode) | Set validation mode. Normal, Forced or Dynamic |
 | ValidationType | [ValidationType](https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.ui.extensions.textboxregex.validationtype) | Set a built in predefined validation types Email, Decimal, Phone Number, Character or Number |
 
 ## Examples
@@ -81,6 +82,7 @@ The following sample demonstrates how to add TextBoxRegex property.
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
+			    <RowDefinition />
             </Grid.RowDefinitions>
 
             <StackPanel Margin="10,0,10,0">
@@ -138,6 +140,20 @@ The following sample demonstrates how to add TextBoxRegex property.
                 </StackPanel>
             </StackPanel>
 
+			<StackPanel Grid.Row="4"
+                        Margin="10,10,10,0">
+				<TextBox Name="NumberValidatorDynamic"
+							extensions:TextBoxRegex.ValidationMode="Dynamic"
+							extensions:TextBoxRegex.ValidationType="Number"
+							Header="Text box with ValidationType=Number, validation occurs at input with ValidationMode=Dynamic and clear only single character when value is invalid"
+							HeaderTemplate="{StaticResource HeaderTemplate}"
+							Style="{StaticResource TextBoxRegexStyle}" />
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Is Valid: " />
+					<TextBlock Text="{Binding (extensions:TextBoxRegex.IsValid), ElementName=NumberValidatorDynamic, Converter={StaticResource StringFormatConverter}}" />
+				</StackPanel>
+			</StackPanel>
+
         </Grid>
     </Grid>
 </Page>
@@ -145,7 +161,7 @@ The following sample demonstrates how to add TextBoxRegex property.
 
 ## Sample Code
 
-[TextBoxRegex Sample Page](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.SampleApp/SamplePages/TextBoxRegex). You can see this in action in [UWP Community Toolkit Sample App](https://www.microsoft.com/store/apps/9NBLGGH4TLCQ).
+[TextBoxRegex Sample Page](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.SampleApp/SamplePages/TextBoxRegex). You can see this in action in [Windows Community Toolkit Sample App](https://www.microsoft.com/store/apps/9NBLGGH4TLCQ).
 
 ## Requirements
 
